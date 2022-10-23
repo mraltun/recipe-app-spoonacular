@@ -37,6 +37,17 @@ const Popular = () => {
             pagination: false,
             drag: "free",
             gap: "5rem",
+            breakpoints: {
+              1024: {
+                perPage: 3,
+              },
+              767: {
+                perPage: 2,
+              },
+              640: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {popular.map((recipe) => {

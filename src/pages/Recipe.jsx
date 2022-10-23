@@ -58,7 +58,7 @@ const Recipe = () => {
 };
 
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
   display: flex;
 
@@ -92,6 +92,10 @@ const Button = styled.button`
 
 const Info = styled.div`
   margin-left: 10rem;
+
+  div {
+    margin-top: 1rem;
+  }
 `;
 
 export default Recipe;

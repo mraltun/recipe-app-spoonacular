@@ -7,19 +7,19 @@ import styled from "styled-components";
 const Category = () => {
   return (
     <List>
-      <SLink to={`cuisine/italian`}>
+      <SLink to={`/cuisine/italian`}>
         <FaPizzaSlice />
         <h4>Italian</h4>
       </SLink>
-      <SLink to={`cuisine/american`}>
+      <SLink to={`/cuisine/american`}>
         <FaHamburger />
         <h4>American</h4>
       </SLink>
-      <SLink to={`cuisine/thai`}>
+      <SLink to={`/cuisine/thai`}>
         <GiNoodles />
         <h4>Thai</h4>
       </SLink>
-      <SLink to={`cuisine/japanese`}>
+      <SLink to={`/cuisine/japanese`}>
         <GiChopsticks />
         <h4>Japanese</h4>
       </SLink>
@@ -57,7 +57,8 @@ const SLink = styled(NavLink)`
     font-size: 1.5rem;
   }
 
-  &.active {
+  &.active,
+  &:hover {
     background: linear-gradient(to right, #f27121, #e94057);
 
     svg {
