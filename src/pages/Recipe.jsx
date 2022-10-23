@@ -9,15 +9,15 @@ const Recipe = () => {
 
   const fetchDetails = async () => {
     const data = await fetch(
-      `https://apis.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+      `https://apis.spoonacular.com/recipes/${params.id}/information?apiKey=${process.env.REACT_APP_API_KEY}`
     );
     const detailData = await data.json();
-    setDetails(detailData.results);
+    setDetails(detailData);
   };
 
   useEffect(() => {
-    fetchDetails();
-  }, [params.name]);
+    fetchDetails(params.id);
+  }, [params.id]);
 
   return (
     <DetailWrapper>
