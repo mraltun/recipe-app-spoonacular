@@ -32,7 +32,7 @@ const FormStyle = styled.form`
   div {
     position: relative;
     margin: 0 auto;
-    width: min(50rem, 100%);
+    width: min(40rem, 100%);
   }
 
   input {
