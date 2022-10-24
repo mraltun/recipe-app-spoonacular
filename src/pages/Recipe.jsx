@@ -41,8 +41,8 @@ const Recipe = () => {
         </Button>
         {activeTab === "instructions" && (
           <div>
-            <h3 dangerouslySetInnerHTML={{ __html: details.summary }}></h3>
-            <h3 dangerouslySetInnerHTML={{ __html: details.instructions }}></h3>
+            <p dangerouslySetInnerHTML={{ __html: details.summary }}></p>
+            <p dangerouslySetInnerHTML={{ __html: details.instructions }}></p>
           </div>
         )}
         {activeTab === "ingredients" && (
@@ -58,9 +58,12 @@ const Recipe = () => {
 };
 
 const DetailWrapper = styled.div`
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin: 10rem inherit 5rem;
   display: flex;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+  }
 
   .active {
     background: linear-gradient(35deg, #494949, #313131);
@@ -79,6 +82,16 @@ const DetailWrapper = styled.div`
   ul {
     margin-top: 2rem;
   }
+
+  p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+
+    &:first-child {
+      margin-top: 2rem;
+    }
+  }
 `;
 
 const Button = styled.button`
@@ -91,10 +104,15 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-  margin-left: 10rem;
+  margin-left: 5rem;
 
   div {
     margin-top: 1rem;
+  }
+
+  @media (max-width: 1100px) {
+    margin-top: 3rem;
+    margin-left: 1rem;
   }
 `;
 

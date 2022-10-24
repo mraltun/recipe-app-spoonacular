@@ -27,12 +27,12 @@ const Search = () => {
 };
 
 const FormStyle = styled.form`
-  margin: 0rem 20rem;
+  margin: 0rem 2rem;
 
   div {
-    width: 100%;
     position: relative;
     margin: 0 auto;
+    width: min(50rem, 100%);
   }
 
   input {
@@ -40,7 +40,7 @@ const FormStyle = styled.form`
     font-size: 1.5rem;
     color: #fff;
     padding: 1rem 3rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     border: none;
     outline: none;
     width: 100%;

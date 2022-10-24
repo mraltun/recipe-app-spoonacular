@@ -7,10 +7,6 @@ import "@splidejs/react-splide/css";
 const Veggie = () => {
   const [veggie, setVeggie] = useState([]);
 
-  useEffect(() => {
-    getVeggie();
-  }, []);
-
   const getVeggie = async () => {
     const check = localStorage.getItem("veggie");
 
@@ -26,6 +22,10 @@ const Veggie = () => {
     }
   };
 
+  useEffect(() => {
+    getVeggie();
+  }, []);
+
   return (
     <div>
       <Wrapper>
@@ -37,13 +37,21 @@ const Veggie = () => {
             pagination: false,
             drag: "free",
             gap: "5rem",
+            breakpoints: {
+              767: {
+                perPage: 2,
+              },
+              640: {
+                perPage: 1,
+              },
+            },
           }}
         >
           {veggie.map((recipe) => {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <Link to={"/recipe/" + recipe.id}>
+                  <Link to={`/recipe/${recipe.id}`}>
                     <p>{recipe.title}</p>
                     <img src={recipe.image} alt={recipe.title} />
                     <Gradient />
